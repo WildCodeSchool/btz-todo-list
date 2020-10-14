@@ -12,5 +12,8 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react'],
-  rules: {},
+  rules: {
+    // 'react/no-array-index-key': 0,
+    'react/prop-types': 0,
+  },
 };

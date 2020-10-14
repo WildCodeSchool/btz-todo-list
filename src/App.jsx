@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import './App.css';
+import TodoForm from './TodoForm';
+import TodoList from './TodoList';
 
 class App extends Component {
   constructor() {
@@ -30,17 +32,12 @@ class App extends Component {
     const { input, todos } = this.state;
     return (
       <main className="container">
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" value={input} onChange={this.handleChange} />
-          <button type="submit">ADD TODO</button>
-        </form>
-        <div>
-          <ul>
-            {todos.map((todo, index) => {
-              return <li key={index}>{todo}</li>;
-            })}
-          </ul>
-        </div>
+        <TodoForm
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          inputValue={input}
+        />
+        <TodoList todos={todos} />
       </main>
     );
   }
